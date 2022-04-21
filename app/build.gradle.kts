@@ -57,6 +57,9 @@ dependencies {
     implementation(Libs.Hilt.HILT_ANDROID)
     kapt(Libs.Hilt.COMPILER)
 
+    implementation(Libs.Androidx.Navigation.LIVEDATA_KTX)
+    implementation(Libs.Androidx.Navigation.UI_KTX)
+
 }
 
 kapt {
