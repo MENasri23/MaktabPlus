@@ -1,8 +1,10 @@
 import Libs.Androidx.implementAppLibraries
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
 }
 
 android {
@@ -40,6 +42,7 @@ dependencies {
 
     implementAppLibraries()
 
+    implementation(Libs.Androidx.Lifecycle.LIFECYCLE_VIEW_MODEL_KTX)
     implementation(Libs.Retrofit.GSON)
     implementation(Libs.Retrofit.GSON_CONVERTER)
     implementation(Libs.Retrofit.RETROFIT2)
@@ -51,4 +54,11 @@ dependencies {
     implementation(Libs.Glide.GLIDE)
     implementation(Libs.Glide.COMPILER)
 
+    implementation(Libs.Hilt.HILT_ANDROID)
+    kapt(Libs.Hilt.COMPILER)
+
+}
+
+kapt {
+    correctErrorTypes = true
 }
