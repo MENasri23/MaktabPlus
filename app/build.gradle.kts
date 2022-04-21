@@ -44,5 +44,11 @@ dependencies {
     implementation(Libs.Retrofit.GSON_CONVERTER)
     implementation(Libs.Retrofit.RETROFIT2)
 
+    implementation(Libs.OkHttp.LOGGING_INTERCEPTOR)
+
+    implementation(Libs.Kotlinx.COROUTINES_ANDROID)
+
+    implementation(Libs.Glide.GLIDE)
+    implementation(Libs.Glide.COMPILER)
 
 }
