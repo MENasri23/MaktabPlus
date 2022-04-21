@@ -1,5 +1,4 @@
 import Libs.Androidx.implementAppLibraries
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
     id("com.android.application")
@@ -8,14 +7,14 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = Versions.COMPILE_SDK
 
     defaultConfig {
         applicationId = "com.example.maktabplus"
-        minSdk = 21
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = Versions.MIN_SDK
+        targetSdk = Versions.TARGET_SDK
+        versionCode = Versions.VERSION_CODE
+        versionName = Versions.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,8 +40,13 @@ android {
 dependencies {
 
     implementAppLibraries()
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.activity:activity-ktx:1.4.0")
+    implementation("androidx.fragment:fragment-ktx:1.4.1")
+    implementation(Libs.Androidx.Lifecycle.RUNTIME)
 
-    implementation(Libs.Androidx.Lifecycle.LIFECYCLE_VIEW_MODEL_KTX)
+    implementation(Libs.Androidx.Lifecycle.VIEW_MODEL_KTX)
+    implementation(Libs.Androidx.Lifecycle.LIVEDATA_KTX)
     implementation(Libs.Retrofit.GSON)
     implementation(Libs.Retrofit.GSON_CONVERTER)
     implementation(Libs.Retrofit.RETROFIT2)
@@ -57,6 +61,7 @@ dependencies {
     implementation(Libs.Hilt.HILT_ANDROID)
     kapt(Libs.Hilt.COMPILER)
 
+    implementation(Libs.Androidx.Navigation.FRAGMENT_KTX)
     implementation(Libs.Androidx.Navigation.LIVEDATA_KTX)
     implementation(Libs.Androidx.Navigation.UI_KTX)
 
