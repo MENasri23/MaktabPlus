@@ -40,17 +40,16 @@ android {
 dependencies {
 
     implementAppLibraries()
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.activity:activity-ktx:1.4.0")
-    implementation("androidx.fragment:fragment-ktx:1.4.1")
     implementation(Libs.Androidx.Lifecycle.RUNTIME)
 
     implementation(Libs.Androidx.Lifecycle.VIEW_MODEL_KTX)
     implementation(Libs.Androidx.Lifecycle.LIVEDATA_KTX)
+
     implementation(Libs.Retrofit.GSON)
     implementation(Libs.Retrofit.GSON_CONVERTER)
     implementation(Libs.Retrofit.RETROFIT2)
 
+    implementation(Libs.OkHttp.OKHTTP3)
     implementation(Libs.OkHttp.LOGGING_INTERCEPTOR)
 
     implementation(Libs.Kotlinx.COROUTINES_ANDROID)
