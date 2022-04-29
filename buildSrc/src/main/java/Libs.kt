@@ -14,6 +14,7 @@ object Libs {
         const val ESPRESSO = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
         const val ROBOLECTRIC = "org.robolectric:robolectric:${Versions.ROBOLECTRIC}"
         const val TRUTH = "com.google.truth:truth:${Versions.TRUTH}"
+        const val TIMBER = "com.jakewharton.timber:timber:${Versions.TIMBER}"
     }
 
     object Androidx {
@@ -23,6 +24,10 @@ object Libs {
             "com.google.android.material:material:${Versions.ANDROID_MATERIAL}"
         const val CONSTRAINT_LAYOUT =
             "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
+
+        const val ACTIVITY_KTX = "androidx.activity:activity-ktx:${Versions.ACTIVITY}"
+        const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${Versions.FRAGMENT}"
+        const val LEGACY_SUPPORT = "androidx.legacy:legacy-support-v4:${Versions.LEGACY_SUPPORT}"
 
         const val TEST_CORE_KTX = "androidx.test:core-ktx:${Versions.ANDROIDX_TEST}"
         const val ARCH_TEST_CORE = "androidx.arch.core:core-testing:${Versions.ARCH_TEST_CORE}"
@@ -38,8 +43,8 @@ object Libs {
         }
 
         object Navigation {
-            const val LIVEDATA_KTX =
-                "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
+            const val RUNTIME_KTX =
+                "androidx.navigation:navigation-runtime-ktx:${Versions.NAVIGATION_KTX}"
             const val FRAGMENT_KTX =
                 "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION_KTX}"
             const val UI_KTX = "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION_KTX}"
@@ -84,12 +89,8 @@ object Libs {
     object Dagger {
         const val DAGGER = "com.google.dagger:dagger:${Versions.DAGGER}"
         const val COMPILER = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
-    }
-
-    object Hilt {
-        const val HILT_ANDROID = "com.google.dagger:hilt-android:${Versions.HILT}"
-        const val COMPILER = "com.google.dagger:hilt-compiler:${Versions.HILT}"
-        const val PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:${Versions.HILT}"
+        const val SUPPORT = "com.google.dagger:dagger-android-support:${Versions.DAGGER}"
+        const val PROCESSOR = "com.google.dagger:dagger-android-processor:${Versions.DAGGER}"
     }
 
     object Glide {

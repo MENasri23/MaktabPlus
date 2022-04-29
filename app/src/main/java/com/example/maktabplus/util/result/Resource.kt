@@ -1,15 +1,17 @@
+import com.example.maktabplus.data.response.ApiError
+
 /**
  * A generic class that holds a value with its loading status.
  * @param <T>
  */
 sealed class Resource<out R>(
     val data: R? = null,
-    val error: Throwable? = null
+    val error: ApiError? = null
 ) {
 
     class Success<out T>(data: T) : Resource<T>(data)
     class Loading<out T>(data: T? = null) : Resource<T>(data)
-    class Error(throwable: Throwable) : Resource<Nothing>(error = throwable)
+    class Error(apiError: ApiError) : Resource<Nothing>(error = apiError)
 
     override fun toString(): String {
         return when (this) {
@@ -21,9 +23,9 @@ sealed class Resource<out R>(
     }
 
     companion object {
-        fun <T> success(data: T? = null) = Success(data)
+        fun <T> success(data: T) = Success(data)
         fun <T> loading(data: T? = null) = Loading(data)
-        fun error(throwable: Throwable) = Error(throwable)
+        fun error(apiError: ApiError) = Error(apiError)
     }
 
 }

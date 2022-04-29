@@ -6,3 +6,7 @@ import javax.inject.Qualifier
 @Retention(AnnotationRetention.BINARY)
 @MustBeDocumented
 annotation class LoggingInterceptor
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class IRemoteDataSource

@@ -4,7 +4,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("dagger.hilt.android.plugin")
-    kotlin("kapt")
+    id("kotlin-kapt")
 }
 
 android {
@@ -30,11 +30,20 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
+    }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
+    hilt {
+        enableAggregatingTask = true
     }
 }
 
@@ -43,6 +52,9 @@ dependencies {
     implementAppLibraries()
     implementation(Libs.Androidx.Lifecycle.RUNTIME)
 
+    implementation (Libs.Androidx.ACTIVITY_KTX)
+    implementation (Libs.Androidx.LEGACY_SUPPORT)
+    implementation (Libs.Androidx.FRAGMENT_KTX)
     implementation(Libs.Androidx.Lifecycle.VIEW_MODEL_KTX)
     implementation(Libs.Androidx.Lifecycle.LIVEDATA_KTX)
 
@@ -58,12 +70,16 @@ dependencies {
     implementation(Libs.Glide.GLIDE)
     implementation(Libs.Glide.COMPILER)
 
-    implementation(Libs.Hilt.HILT_ANDROID)
-    kapt(Libs.Hilt.COMPILER)
-
+    implementation ("com.google.dagger:hilt-android:2.41")
+    kapt ("com.google.dagger:hilt-compiler:2.41")
+    kapt ("androidx.hilt:hilt-compiler:1.0.0")
+    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0")
     implementation(Libs.Androidx.Navigation.FRAGMENT_KTX)
-    implementation(Libs.Androidx.Navigation.LIVEDATA_KTX)
+    implementation(Libs.Androidx.Navigation.RUNTIME_KTX)
     implementation(Libs.Androidx.Navigation.UI_KTX)
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-savedstate:${Versions.LIFECYCLE}")
+//    implementation ("androidx.lifecycle:lifecycle-common-java8:${Versions.LIFECYCLE}")
 
 }
 
